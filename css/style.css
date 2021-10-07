@@ -1,0 +1,730 @@
+/* Google Font Link */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Universal */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+ ::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+}
+
+
+/* Root */
+
+:root {
+    --black: #111;
+    --light-black: #1C1C1C;
+    --Dark-black: #000;
+    --white: #fff;
+    --grey: #ccc;
+    --light-red: #FF0038;
+    --boxShadow: rgba(0, 0, 0, .20);
+}
+
+
+/* HTML */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Body */
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+
+/* Section */
+
+section:nth-child(even) {
+    background: var(--grey);
+}
+
+
+/* Main Content */
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* Navbar */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+    transition: 0.5s ease;
+    z-index: 99;
+}
+
+nav.scroll {
+    padding: 20px 100px;
+    background: var(--black);
+    box-shadow: 0 10px 10px var(--boxShadow);
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: 800;
+    color: var(--black);
+}
+
+nav.scroll .logo {
+    color: var(--white);
+}
+
+nav .logo span {
+    color: var(--light-red);
+}
+
+nav .navlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .navlist li {
+    margin: 0 15px;
+}
+
+nav .navlist li a {
+    color: var(--grey);
+    font-weight: 500;
+    transition: color 0.5s ease;
+    position: relative;
+}
+
+nav .navlist li a:hover {
+    color: var(--white);
+}
+
+nav .navlist li a::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 0px;
+    height: 1px;
+    background: var(--white);
+    transition: width 0.5s ease;
+}
+
+nav .navlist li a:hover::before {
+    width: 100%;
+}
+
+nav .navlist li a::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 0px;
+    height: 1px;
+    background: var(--white);
+    transition: width 0.5s ease;
+}
+
+nav .navlist li a:hover::after {
+    width: 100%;
+}
+
+
+/* Home */
+
+.Home {
+    width: 100%;
+    height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    background: var(--grey);
+}
+
+.Home .homeBg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+}
+
+.Home .homeBg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Home .textContent {
+    z-index: 3;
+}
+
+.Home .textContent h1 {
+    font-size: 4em;
+    line-height: 1em;
+    font-weight: 800;
+    color: var(--black);
+    margin-bottom: 50px;
+}
+
+.Home .textContent h1 span {
+    font-size: 2em;
+    color: var(--light-red);
+    line-height: 1em;
+}
+
+.Home .textContent p {
+    max-width: 50%;
+    font-size: 1.1em;
+    font-weight: 300;
+    word-spacing: 1px;
+    margin-bottom: 40px;
+    color: var(--light-black);
+}
+
+.Home .textContent .btn,
+.Menu .menuBx .row .card .textBx .btn,
+.Menu .btn,
+.Contact .conContent .form .btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background: var(--black);
+    color: var(--white);
+    text-transform: capitalize;
+    font-size: 1em;
+    font-weight: 300;
+    word-spacing: 1px;
+    transition: all 0.5s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.Home .textContent .btn span:nth-child(1),
+.Menu .menuBx .row .card .textBx .btn span:nth-child(1) {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 0;
+    height: 1px;
+    background: var(--white);
+}
+
+.Home .textContent .btn span:nth-child(2),
+.Menu .menuBx .row .card .textBx .btn span:nth-child(2) {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 1px;
+    height: 0;
+    background: var(--white);
+}
+
+.Home .textContent .btn span:nth-child(3),
+.Menu .menuBx .row .card .textBx .btn span:nth-child(3) {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    width: 0;
+    height: 1px;
+    background: var(--white);
+}
+
+.Home .textContent .btn span:nth-child(4),
+.Menu .menuBx .row .card .textBx .btn span:nth-child(4) {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    width: 1px;
+    height: 0;
+    background: var(--white);
+}
+
+.Home .textContent .btn span:nth-child(1),
+.Home .textContent .btn span:nth-child(2),
+.Home .textContent .btn span:nth-child(3),
+.Home .textContent .btn span:nth-child(4),
+.Menu .menuBx .row .card .textBx .btn span:nth-child(1),
+.Menu .menuBx .row .card .textBx .btn span:nth-child(2),
+.Menu .menuBx .row .card .textBx .btn span:nth-child(3),
+.Menu .menuBx .row .card .textBx .btn span:nth-child(4) {
+    transition: 0.5s ease;
+}
+
+.Home .textContent .btn:hover span:nth-child(1),
+.Home .textContent .btn:hover span:nth-child(3),
+.Menu .menuBx .row .card .textBx .btn:hover span:nth-child(1),
+:hover .Menu .menuBx .row .card .textBx .btn:hover span:nth-child(3) {
+    width: 10px;
+}
+
+.Home .textContent .btn:hover span:nth-child(2),
+.Home .textContent .btn:hover span:nth-child(4),
+.Menu .menuBx .row .card .textBx .btn:hover span:nth-child(2),
+.Menu .menuBx .row .card .textBx .btn:hover span:nth-child(4) {
+    height: 10px;
+}
+
+
+/* About */
+
+.About {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.About img {
+    width: 40%;
+    height: 100%;
+}
+
+.About .textContent {
+    width: 60%;
+    height: 100%;
+    padding: 0 50px;
+    position: relative;
+}
+
+.heading {
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.heading h3 {
+    font-size: 1.5em;
+    font-weight: 800;
+    color: var(--black);
+    margin-bottom: 5px;
+}
+
+.heading h3 span {
+    color: var(--light-red);
+    font-size: 1.2em;
+}
+
+.About .textContent .textBx {
+    width: 100%;
+    height: auto;
+    border: 10px solid var(--white);
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--boxShadow);
+    padding: 50px 20px;
+}
+
+.About .textContent .textBx h2 {
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+
+/* Menu */
+
+.Menu {
+    background: #c1c1c1 !important;
+    width: 100%;
+    height: auto;
+}
+
+.Menu .menuBx {
+    padding: 20px 100px;
+    padding-bottom: 40px;
+}
+
+.Menu .menuBx .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+}
+
+.Menu .menuBx .row .card {
+    width: 400px;
+    height: 500px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.Menu .menuBx .row .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Menu .menuBx .row .card .textBx {
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    padding: 20px;
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    transition: bottom 0.5s ease;
+}
+
+.Menu .menuBx .row .card:hover .textBx {
+    bottom: 0;
+}
+
+.Menu .menuBx .row .card .textBx h2 {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.Menu .menuBx .row .card .textBx h3 {
+    font-size: 0.9em;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.Menu .menuBx .row .card .textBx p {
+    font-size: 0.9em;
+    color: var(--grey);
+    margin-bottom: 10px;
+}
+
+.Menu .menuBx .row .card .textBx .rating {
+    margin-bottom: 10px;
+}
+
+.Menu .menuBx .row .card .textBx .rating a {
+    color: #000;
+    font-size: 1.1em;
+}
+
+.Menu .menuBx .row .card .textBx .price {
+    margin-bottom: 10px;
+}
+
+.Menu .button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Expert */
+
+.Expert,
+.Testimonial {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.Expert .exContent {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    padding: 20px 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Expert .exContent .exBox {
+    width: 400px;
+    height: 400px;
+    background: var(--grey);
+    margin: 0 20px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.Expert .exContent .exBox .imgBx {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.Expert .exContent .exBox .imgBx img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Expert .exContent .exBox .textBx {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Expert .exContent .exBox .textBx h3 {
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
+
+/* Testimonial */
+
+.Testimonial {
+    width: 100%;
+    height: 100vh;
+    background: url('../img/testBg.jpg') !important;
+    background-position: center !important;
+    background-size: cover !important;
+    position: relative;
+}
+
+.Testimonial .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.Testimonial .container .heading h3 {
+    color: var(--white) !important;
+}
+
+.Testimonial .container .heading p {
+    color: var(--grey) !important;
+}
+
+.Testimonial .container .textContent {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+}
+
+.Testimonial .container .textContent .testBx {
+    width: 48%;
+    height: 400px;
+    background: var(--grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.Testimonial .container .textContent .testBx .imgBx {
+    width: 30%;
+    height: 100%;
+    background: var(--white);
+}
+
+.Testimonial .container .textContent .testBx .imgBx img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Testimonial .container .textContent .testBx .textBx {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--white);
+    padding: 0 25px;
+}
+
+.Testimonial .container .textContent .testBx .textBx p {
+    font-size: 0.9em;
+    font-weight: 300;
+    color: var(--light-black);
+    margin-bottom: 40px;
+}
+
+.Testimonial .container .textContent .testBx .textBx span {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+    color: var(--black);
+    font-size: 1.2em;
+    text-align: right;
+}
+
+.Testimonial .container .textContent .testBx .textBx span a {
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Contact */
+
+.Contact {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.Contact .conBg {
+    width: 60%;
+    height: 100%;
+}
+
+.Contact .conBg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Contact .conContent {
+    width: 40%;
+    height: 100%;
+    padding: 0 40px;
+    background: var(--white);
+    position: relative;
+}
+
+.Contact .conContent .form {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    padding: 0 40px;
+}
+
+.Contact .conContent .form form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 80px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.Contact .conContent .form form input {
+    width: 100%;
+    height: 40px;
+    padding: 20px 10px;
+    margin: 20px 0;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--black);
+    color: var(--light-black);
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+.Contact .conContent .form form input::placeholder,
+.Contact .conContent .form form textarea::placeholder {
+    color: var(--grey);
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+.Contact .conContent .form form textarea {
+    width: 100%;
+    height: 150px;
+    margin: 20px 0;
+    padding: 10px 20px;
+    outline: none;
+    border: 1px solid var(--black);
+    resize: none;
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+
+/* Footer */
+
+.Footer {
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+    background: var(--black) !important;
+    text-align: center;
+}
+
+.Footer .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.Footer .icons a {
+    font-size: 1.3em;
+    margin: 0 10px;
+    color: var(--white);
+}
+
+.Footer .copyright h4 {
+    font-size: 0.9em;
+    font-weight: 300;
+    color: var(--white);
+}
